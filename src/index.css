@@ -1,13 +1,135 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: rgba(78, 117, 223, 0.8);
+  position: relative;
+}
+.header {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.win {
+  position: absolute;
+  width: 600px;
+  height: 300px;
+  background-color: rgb(32, 146, 127);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.winText {
+  text-align: center;
+}
+
+.turns {
+  font-size: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: white;
+  margin-top: 1rem;
+}
+
+.front {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(90deg);
+}
+
+.front.isFlipped {
+  transform: rotateY(0deg) !important;
+}
+.back {
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.back.isEnable {
+  pointer-events: auto;
+}
+.con {
+  position: relative;
+}
+.cards {
+  width: calc(800px + 3rem);
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  position: relative;
+}
+
+@media screen and (max-width: 900px) {
+  .cards {
+    width: calc(600px + 3rem);
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .cards {
+    width: calc(300px + 3rem);
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+  }
+
+  .back,
+  .front,
+  .con {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.startGame {
+  cursor: pointer;
+  width: 150px;
+  padding: 0.5rem 1.5rem;
+  border: 0;
+  background: #5a0361;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
