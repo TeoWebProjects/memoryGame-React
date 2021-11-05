@@ -111,7 +111,7 @@ function App() {
         {win ? (
           <div className="win">
             <div className="winText">You Won in {turns} turns!</div>
-            <button className="startGame" onClick={playAgain}>
+            <button className="playAgain" onClick={playAgain}>
               Play Again!
             </button>
           </div>
